@@ -426,7 +426,7 @@ impl<'a> ToUrl for &'a str {
 
 impl<'a> ToUrl for &'a Url {
     fn with_url_str<F>(self, f: F) where F: FnOnce(&str) {
-        self.to_string().with_url_str(f);
+        self.as_str().with_url_str(f);
     }
 }
 
